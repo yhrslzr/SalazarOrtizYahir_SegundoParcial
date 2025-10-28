@@ -28,7 +28,7 @@ struct EquipView: View {
     
     var body: some View {
         VStack{
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text("holi :3. la música es oficial 🤓☝🏼")
         }
         .onAppear(){
             playMusic()

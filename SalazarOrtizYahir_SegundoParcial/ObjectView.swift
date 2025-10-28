@@ -41,19 +41,21 @@ struct ObjectView: View {
                         Text("It's dangerous to go alone! Take this").font(.title).foregroundColor(Color.white)
                     }
                     
-                    List {
-                        ForEach(objectVM, id: \.uuid)
-                        { objeto in
-                            ObjectCV(image: objeto.image, name: objeto.name)
-                                .cornerRadius(15)
-                                .padding(4)
-                                .listRowInsets(EdgeInsets())
+                    NavigationLink(destination: EquipView()){
+                        List {
+                            ForEach(objectVM, id: \.uuid)
+                            { objeto in
+                                ObjectCV(image: objeto.image, name: objeto.name)
+                                    .cornerRadius(15)
+                                    .padding(4)
+                                    .listRowInsets(EdgeInsets())
+                            }
+                            
+                        }.onAppear(){
+                            playMusic()
                         }
-                        
-                    }.onAppear(){
-                        playMusic()
+                        .listStyle(PlainListStyle())
                     }
-                    .listStyle(PlainListStyle())
                     
                 }
             }.padding(.trailing)
