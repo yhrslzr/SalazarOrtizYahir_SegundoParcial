@@ -30,26 +30,21 @@ struct ObjectView: View {
     
     var body: some View {
         NavigationStack{
-            ScrollView{
-                
+            VStack(){
                 VStack(){
-                    
-                    GroupBox{
-                        HStack{
-                            Image("wizard")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 100, height: 100)
-                                .padding()
-                            Text("It's dangerous to go alone! Take this").font(.title).foregroundColor(Color.white)
-                        }
-                    }.background(Color.black)
+                    HStack{
+                        Image("wizard")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 100)
+                            .padding()
+                        Text("It's dangerous to go alone! Take this").font(.title).foregroundColor(Color.white)
+                    }
                     
                     List {
                         ForEach(objectVM, id: \.uuid)
                         { objeto in
                             ObjectCV(image: objeto.image, name: objeto.name)
-                                .padding(.trailing)
                                 .cornerRadius(15)
                                 .padding(4)
                                 .listRowInsets(EdgeInsets())

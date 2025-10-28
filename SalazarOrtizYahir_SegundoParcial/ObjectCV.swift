@@ -25,18 +25,12 @@ struct ObjectCV: View {
                     .foregroundColor(Color.yellow)
                     .font(.title)
                     .padding(.bottom)
-                HStack(){
-                    Spacer()
-                    Button(action: {
-                        print("Has adquirido \(name)")
-                    },
-                           label:{
-                    })
-                }
+                
             }
         }
+        .frame(maxWidth: .infinity)
         .background(Color.shop)
-        .border(Color.white, width: 1)
+        .border(Color.white)
         .onAppear(){
             print("\(name)")
         }

@@ -29,26 +29,26 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Image("wallpaper")
-                    .resizable()
-                    .aspectRatio(1, contentMode: .fill)
-                    .ignoresSafeArea()
-                    .onAppear(){
-                        playMusic()
-                    }
-                }
-                    .foregroundStyle(.tint)
-                    .overlay{
-                        NavigationLink(destination: ObjectView()){
-                            Text("Comenzar")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.yellow)
-                                .offset(x: 0, y:160)
+                NavigationLink(destination: ObjectView()){
+                    Image("wallpaper")
+                        .resizable()
+                        .aspectRatio(1, contentMode: .fill)
+                        .ignoresSafeArea()
+                        .onAppear(){
+                            playMusic()
                         }
-                    }
+                }
+            }
+            .foregroundStyle(.tint)
+            .overlay{
+                Text("Comenzar")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.yellow)
+                    .offset(x: 0, y:160)
+            }
         }
-        }
+    }
 }
 
 #Preview {
